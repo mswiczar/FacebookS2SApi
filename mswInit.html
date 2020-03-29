@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Basic Facebook S2S Example</title>
+
+
+	<script type="text/javascript" src="js/mswAir.js"></script>
+
+	
+</head>
+
+<body>
+	
+	
+
+<script>
+
+function myFunction() 
+{
+		let externalId= getExternalId();
+		let theMessage = "The External Id for this User is: -> " + externalId
+		alert(theMessage);
+}
+
+
+function myFunctionClick() 
+{
+		let externalId= getExternalId();
+		let theMessage = "ClickOut =  https://somesite.com/?utm=" + externalId
+		alert(theMessage);
+}
+
+
+
+
+</script>	
+	
+	
+<H1>getExternalId TEST PAGE</H1>
+	<p>
+	What this Page does?<br>
+	Load the JavaScript File Called mswAir.js<br><br>
+	Call getExternalId function included in mswAir.js<br>
+	Call the facebook init with the external_id<br><br><br>
+	Your pixel in the home page is: xxxxxxxxxxx<br>
+	fbq('init', 'xxxxxxxxxxx', {'external_id': External});<br>
+	<br>
+	
+Example how to do it  <br><br>
+
+ let externalId= getExternalId(); <br>
+ fbq('init', 'xxxxxxxxxxx',{'external_id': externalId});<br>
+ <br>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  let externalId= getExternalId();
+  fbq('init', 'xxxxxxxxxxx',{'external_id': externalId});
+  fbq('track', 'PageView');
+</script>
+
+Full implementation.
+<br><br>
+<textarea cols=70 rows=20>
+
+<!-- ExternalId Cookie Code -->
+<script type="text/javascript" src="js/mswAir.js"></script>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  let externalId= getExternalId();
+  fbq('init', 'xxxxxxxxxxx',{'external_id': externalId});
+  fbq('track', 'PageView');
+</script>
+</textarea>
+
+
+
+
+	<h3> Test Functions</h3>
+	<table>
+	<tr>
+    <td><button onclick="myFunction()">View External ID</button></td>
+
+    <td><button onclick="myFunctionClick()">Click Out with External ID</button></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</body>
+</html>
